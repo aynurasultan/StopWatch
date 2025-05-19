@@ -1,0 +1,164 @@
+body {
+  background: linear-gradient(25deg, #b36e87, #5e34d3 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  transition: background 0.3s ease;
+}
+
+body.dark {
+  background: linear-gradient(25deg, #1f1f1f, #333 50%);
+  color: #fff;
+}
+
+.container {
+  background-color: #eee9e9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .container {
+  background-color: #2a2a2a;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.timer {
+  font-size: 40px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  animation: pulse 1.5s infinite alternate;
+}
+
+body.dark .timer {
+  background-color: #444;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.timer span {
+  width: 90px;
+  display: inline-block;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#startBtn {
+  background-color: #28a745;
+  color: #fff;
+}
+#pauseBtn {
+  background-color: #ffc107;
+  color: #000;
+}
+#resumeBtn {
+  background-color: #007bff;
+  color: #fff;
+}
+#stopBtn {
+  background-color: #dc3545;
+  color: #fff;
+}
+#resetBtn {
+  background-color: #6c757d;
+  color: #fff;
+}
+#clearLapsBtn {
+  background-color: #17a2b8;
+  color: #fff;
+}
+#toggleDarkMode {
+  background-color: #343a40;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.lap-title {
+  font-size: 1.5rem;
+}
+
+.laps {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  max-height: 200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark ul {
+  background-color: #3a3a3a;
+}
+
+li {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span {
+  font-weight: 700;
+}
+
+li button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
